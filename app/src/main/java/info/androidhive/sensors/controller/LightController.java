@@ -1,4 +1,4 @@
-package info.androidhive.loginandregistration.controller;
+package info.androidhive.sensors.controller;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -8,28 +8,22 @@ import android.util.Log;
 
 import java.util.Observable;
 
-public class ProximityController extends Observable implements SensorEventListener {
+public class LightController extends Observable implements SensorEventListener {
 
-    public static final String VALUE = "PROXIMITY_VALUE";
-    private static final String TAG = "ProximityController";
+    public static final String VALUE = "LIGHT_VALUE";
+    private static final String TAG = "LightController";
     private SensorManager sensorManager;
-    private Sensor proximitySensor;
+    private Sensor lightSensor;
 
-    public ProximityController(SensorManager sm) {
+    public LightController(SensorManager sm) {
         this.sensorManager = sm;
-
-        proximitySensor =
-                sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
-
-        if(proximitySensor == null) {
-            Log.e(TAG, "Proximity sensor not available.");
+        lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+        if(lightSensor == null) {
+            Log.e(TAG, "Gyroscope sensor not available.");
         }
-
         sensorManager.registerListener(this,
-                proximitySensor, 2 * 1000 * 1000);
-
+                lightSensor, 2 * 1000 * 1000);
     }
-
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
         String values = "";

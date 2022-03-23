@@ -1,4 +1,4 @@
-package info.androidhive.loginandregistration.controller;
+package info.androidhive.sensors.controller;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -7,7 +7,6 @@ import android.hardware.SensorManager;
 import android.util.Log;
 
 import java.util.Observable;
-import java.util.Observer;
 
 public class AccelerometerController extends Observable implements SensorEventListener {
 

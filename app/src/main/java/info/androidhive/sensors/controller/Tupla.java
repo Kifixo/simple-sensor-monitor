@@ -1,4 +1,4 @@
-package info.androidhive.loginandregistration.controller;
+package info.androidhive.sensors.controller;
 
 /**
  * Tupla genérica de dos objetos

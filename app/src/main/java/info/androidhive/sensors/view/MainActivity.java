@@ -1,4 +1,4 @@
-package info.androidhive.loginandregistration.view;
+package info.androidhive.sensors.view;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,12 +9,12 @@ import android.widget.TextView;
 import java.util.Observable;
 import java.util.Observer;
 
-import info.androidhive.loginandregistration.R;
-import info.androidhive.loginandregistration.controller.AccelerometerController;
-import info.androidhive.loginandregistration.controller.GyroscopeController;
-import info.androidhive.loginandregistration.controller.LightController;
-import info.androidhive.loginandregistration.controller.ProximityController;
-import info.androidhive.loginandregistration.controller.Tupla;
+import info.androidhive.sensors.R;
+import info.androidhive.sensors.controller.AccelerometerController;
+import info.androidhive.sensors.controller.GyroscopeController;
+import info.androidhive.sensors.controller.LightController;
+import info.androidhive.sensors.controller.ProximityController;
+import info.androidhive.sensors.controller.Tupla;
 
 /**
  * Clase controladora de la ventana de inicio de sesión.

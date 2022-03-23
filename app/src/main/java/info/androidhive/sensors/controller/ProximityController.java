@@ -1,4 +1,4 @@
-package info.androidhive.loginandregistration.controller;
+package info.androidhive.sensors.controller;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -7,29 +7,30 @@ import android.hardware.SensorManager;
 import android.util.Log;
 
 import java.util.Observable;
-import java.util.Observer;
 
+public class ProximityController extends Observable implements SensorEventListener {
 
-public class GyroscopeController extends Observable implements SensorEventListener, Observer {
-
-    public static final String VALUE = "GYROSCOPE_VALUE";
-    private static final String TAG = "GyroscopeController";
+    public static final String VALUE = "PROXIMITY_VALUE";
+    private static final String TAG = "ProximityController";
     private SensorManager sensorManager;
-    private Sensor gyroscopeSensor;
+    private Sensor proximitySensor;
 
-    public GyroscopeController(SensorManager sm) {
+    public ProximityController(SensorManager sm) {
         this.sensorManager = sm;
-        gyroscopeSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
-        if(gyroscopeSensor == null) {
-            Log.e(TAG, "Gyroscope sensor not available.");
+
+        proximitySensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+
+        if(proximitySensor == null) {
+            Log.e(TAG, "Proximity sensor not available.");
         }
+
         sensorManager.registerListener(this,
-                gyroscopeSensor, 2 * 1000 * 1000);
+                proximitySensor, 2 * 1000 * 1000);
+
     }
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-
         String values = "";
         for (float v : sensorEvent.values) {
             values += v + ", ";
@@ -43,11 +44,6 @@ public class GyroscopeController extends Observable implements SensorEventListen
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
-    }
-
-
-    @Override
-    public void update(Observable observable, Object o) {
 
     }
 }
