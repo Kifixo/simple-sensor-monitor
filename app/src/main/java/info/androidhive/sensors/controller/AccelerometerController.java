@@ -35,7 +35,7 @@ public class AccelerometerController extends Observable implements SensorEventLi
         Log.e(TAG, values);
 
         setChanged();
-        notifyObservers(new Tupla<>(VALUE, values));
+        notifyObservers(new Tuple<>(VALUE, values));
     }
 
     @Override
