@@ -14,26 +14,23 @@ import info.androidhive.sensors.controller.AccelerometerController;
 import info.androidhive.sensors.controller.GyroscopeController;
 import info.androidhive.sensors.controller.LightController;
 import info.androidhive.sensors.controller.ProximityController;
+import info.androidhive.sensors.controller.RotationController;
 import info.androidhive.sensors.controller.Tupla;
 
-/**
- * Clase controladora de la ventana de inicio de sesión.
- * @author Martín Gascón
- * @author Eduardo Ruiz
- * @author Daniel Huici
- * @version 1.0
- */
+
 public class MainActivity extends Activity  implements Observer {
 
     private TextView lightValue;
     private TextView accelerometerValue;
     private TextView gyroscopeValue;
     private TextView proximityValue;
+    private TextView temperatureValue;
 
     private GyroscopeController gyroscope;
     private ProximityController proximity;
     private LightController light;
     private AccelerometerController accelerometer;
+    private RotationController temperature;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +41,7 @@ public class MainActivity extends Activity  implements Observer {
         accelerometerValue = findViewById(R.id.accelerometerValue);
         gyroscopeValue = findViewById(R.id.gyroscopeValue);
         proximityValue = findViewById(R.id.proximityValue);
+        temperatureValue = findViewById(R.id.rotationValue);
         SensorManager sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
         gyroscope = new GyroscopeController(sensorManager);
@@ -54,6 +52,8 @@ public class MainActivity extends Activity  implements Observer {
         light.addObserver(this);
         accelerometer = new AccelerometerController(sensorManager);
         accelerometer.addObserver(this);
+        temperature = new RotationController(sensorManager);
+        temperature.addObserver(this);
 
     }
 
@@ -77,6 +77,10 @@ public class MainActivity extends Activity  implements Observer {
 
             case ProximityController.VALUE:
                 proximityValue.setText((String) tupla.b);
+                break;
+
+            case RotationController.VALUE:
+                temperatureValue.setText((String) tupla.b);
                 break;
 
         }

@@ -9,7 +9,6 @@ allprojects {
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "23.0.2"
 
     defaultConfig {
         applicationId "info.androidhive.loginandregistration"
