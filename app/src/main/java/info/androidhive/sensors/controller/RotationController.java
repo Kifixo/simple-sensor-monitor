@@ -35,7 +35,7 @@ public class RotationController extends Observable implements SensorEventListene
         Log.e(TAG, values);
 
         setChanged();
-        notifyObservers(new Tupla<>(VALUE, values));
+        notifyObservers(new Tuple<>(VALUE, values));
     }
 
     @Override
