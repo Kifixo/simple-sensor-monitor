@@ -7,7 +7,7 @@ package info.androidhive.sensors.controller;
  * @author Daniel Huici
  * @version 1.0
  */
-public class Tupla<A, B> {
+public class Tuple<A, B> {
     public final A a;
     public final B b;
 
@@ -15,7 +15,7 @@ public class Tupla<A, B> {
      *  Construye una tupla
      *
      */
-    public Tupla(A a, B b) {
+    public Tuple(A a, B b) {
         this.a = a;
         this.b = b;
     }

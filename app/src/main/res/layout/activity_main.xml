@@ -105,25 +105,11 @@
                 android:textColor="#FFFFFF"
                 android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/rotationName"
+            <Button
+                android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:textColor="#FFFFFF"
-                android:text="Rotation" />
-
-            <TextView
-                android:id="@+id/rotationValue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                 />
+                android:text="Button" />
 
         </LinearLayout>
 

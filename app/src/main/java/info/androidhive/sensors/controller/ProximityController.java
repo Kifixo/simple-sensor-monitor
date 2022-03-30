@@ -39,7 +39,7 @@ public class ProximityController extends Observable implements SensorEventListen
         Log.e(TAG, values);
 
         setChanged();
-        notifyObservers(new Tupla<>(VALUE, values));
+        notifyObservers(new Tuple<>(VALUE, values));
     }
 
     @Override
